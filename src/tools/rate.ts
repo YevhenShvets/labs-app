@@ -24,8 +24,6 @@ export const getProfits = async (incomes: Income[]) => {
     incomes.map(income => getRate(income.currency, income.date)),
   )
 
-  console.log(rate)
-
   const totalEarned = incomes
     .map(income => income.summ)
     .reduce((acc, summ) => acc + summ)

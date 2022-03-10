@@ -1,6 +1,7 @@
+import Portfolio from 'screens/Portfolio'
+import { getProfits } from 'tools/rate'
 import type { Income } from 'Profits'
 import React, { useEffect } from 'react'
-import { getProfits } from 'tools/rate'
 import './styles.css'
 
 const App = () => {
@@ -20,7 +21,11 @@ const App = () => {
     init()
   }, [])
 
-  return <div></div>
+  return (
+    <div>
+      <Portfolio />
+    </div>
+  )
 }
 
 export default App
