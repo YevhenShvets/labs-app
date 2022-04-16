@@ -5,7 +5,8 @@ import {
 } from '@heroicons/react/outline'
 import React, { useState } from 'react'
 import { classnames, range } from 'tools/common'
-import { BaseModal, BaseModalProps } from '../components'
+import type { BaseModalProps } from '../components'
+import { BaseModal } from '../components'
 
 export interface DateRange {
   start: number

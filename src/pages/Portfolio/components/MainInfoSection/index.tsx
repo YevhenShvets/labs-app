@@ -4,7 +4,8 @@ import {
   PhoneIcon,
 } from '@heroicons/react/outline'
 import faker from 'faker'
-import { IconText, SkillRow } from 'screens/components'
+import { IconText } from 'uikit/atoms'
+import { SkillRow } from 'uikit/molecules'
 
 const MainInfoSection = () => {
   return (

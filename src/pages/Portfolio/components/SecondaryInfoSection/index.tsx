@@ -1,9 +1,8 @@
 import React from 'react'
-import { ExperienceCard, IconText } from 'screens/components'
+import { IconText } from 'uikit/atoms'
+import { ExperienceCard } from 'uikit/organisms'
 
-export interface SecondaryInfoSectionProps {}
-
-const SecondaryInfoSection = ({}: SecondaryInfoSectionProps) => {
+const SecondaryInfoSection = () => {
   return (
     <div>
       <div className="border ml-5 border-ultra-dark-grey flex rounded-lg rounded-tl-[100px] p-5 m-5">

@@ -1,8 +1,8 @@
-import type { Income } from 'Profits'
+import type { Income } from 'models/profits'
 import React, { useEffect, useState } from 'react'
-import { Calendar } from 'screens/components'
-import { CalendarProps } from 'screens/components/Modals/Calendar'
 import { getProfits } from 'tools/rate'
+import { CalendarModal } from 'uikit/organisms'
+import { CalendarProps } from 'uikit/organisms/modals/Calendar'
 import './styles.css'
 
 const App = () => {
@@ -17,13 +17,12 @@ const App = () => {
 
   const init = async () => {
     const profit = await getProfits(incomes)
-
     console.log(profit)
   }
 
   useEffect(() => {
     init()
-  }, [])
+  })
 
   const onChange = (type: CalendarProps['type']) => {
     setType(type)
@@ -44,7 +43,7 @@ const App = () => {
         </button>
       </div>
 
-      <Calendar
+      <CalendarModal
         type={type}
         visible={calendarVisible}
         onClose={() => setCalendarVisible(false)}

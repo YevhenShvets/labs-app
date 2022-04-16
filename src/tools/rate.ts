@@ -1,6 +1,6 @@
 import httpClient from 'api/httpClient'
 import cheerio from 'cheerio'
-import type { Currency, Income } from 'Profits'
+import type { Currency, Income } from 'models/profits'
 
 export const getRate = async (currency: Currency, date: string) => {
   const page = await httpClient.get(`/${currency.toLowerCase()}/${date}/`)

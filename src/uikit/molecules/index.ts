@@ -1,0 +1,1 @@
+export { default as SkillRow } from './rows/SkillRow'
