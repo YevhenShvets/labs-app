@@ -1,54 +1,18 @@
-import type { Income } from 'models/profits'
-import React, { useEffect, useState } from 'react'
-import { getProfits } from 'tools/rate'
-import { CalendarModal } from 'uikit/organisms'
-import { CalendarProps } from 'uikit/organisms/modals/Calendar'
+import { CalendarPage, HomePage, PortfolioPage, ProfitsPage } from 'pages'
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './styles.css'
 
 const App = () => {
-  const [type, setType] = useState<CalendarProps['type']>('single')
-  const [calendarVisible, setCalendarVisible] = useState<boolean>(false)
-
-  const incomes: Income[] = [
-    { currency: 'EUR', summ: 400, date: '2020-03-30' },
-    { currency: 'USD', summ: 500, date: '2020-02-20' },
-    { currency: 'EUR', summ: 458, date: '2020-01-31' },
-  ]
-
-  const init = async () => {
-    const profit = await getProfits(incomes)
-    console.log(profit)
-  }
-
-  useEffect(() => {
-    init()
-  })
-
-  const onChange = (type: CalendarProps['type']) => {
-    setType(type)
-    setCalendarVisible(true)
-  }
-
   return (
-    <div className="items-center">
-      <div className="flex p-5 border self-center border-green-200 rounded-xl justify-around">
-        <button onClick={() => onChange('single')}>
-          <p>single</p>
-        </button>
-        <button onClick={() => onChange('range')}>
-          <p>range</p>
-        </button>
-        <button onClick={() => onChange('multiRange')}>
-          <p>multiRange</p>
-        </button>
-      </div>
-
-      <CalendarModal
-        type={type}
-        visible={calendarVisible}
-        onClose={() => setCalendarVisible(false)}
-      />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/profits" element={<ProfitsPage />} />
+        <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/calendar" element={<CalendarPage />} />
+      </Routes>
+    </Router>
   )
 }
 

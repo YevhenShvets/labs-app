@@ -121,8 +121,10 @@ const Calendar = ({
                     'px-3 py-1 my-1 text-center text-gray-700',
                     {
                       'text-gray-300': otherMonth,
-                      'bg-blue-500 text-white rounded-l-lg': isStart(key),
-                      'bg-blue-500 text-white rounded-r-lg': isEnd(key),
+                      'bg-blue-500 text-white rounded-l-lg pl-2 ml-1':
+                        isStart(key),
+                      'bg-blue-500 text-white rounded-r-lg pr-2 mr-1':
+                        isEnd(key),
                       'bg-blue-100': inRange(key),
                       'bg-blue-500 text-white rounded-lg':
                         isStart(key) && type === 'single',
