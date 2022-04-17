@@ -20,6 +20,9 @@ const HomePage = ({}: HomePageProps) => {
         <li>
           <Link to="/calendar">Calendar</Link>
         </li>
+        <li>
+          <Link to="/keylight">Keylight</Link>
+        </li>
       </ul>
     </div>
   )

@@ -21,7 +21,7 @@ const ProfitsPage = ({}: ProfitsPageProps) => {
 
   useEffect(() => {
     init()
-  })
+  }, [])
 
   return <pre>{JSON.stringify(profits, null, 2)}</pre>
 }
