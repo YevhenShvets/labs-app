@@ -89,11 +89,6 @@ const KeylightPage = ({}: KeylightPageProps) => {
   const onClickPreset = (presetName: string) => {
     const preset = presets.find(preset => preset.name === presetName)
 
-    console.log(
-      groups.filter(group => preset?.groups.includes(group.name)),
-      preset,
-    )
-
     setSelectedGroups(
       groups.filter(group => preset?.groups.includes(group.name)),
     )
@@ -121,16 +116,9 @@ const KeylightPage = ({}: KeylightPageProps) => {
     setGroupColor(color.hex)
   }
 
-  const onChangeColor = (name: string, color: ColorResult) => {}
-
   const onChangeItem = (group: string, key: string) => {
     setGroups(prev =>
       prev.reduce((prev: Group[], next) => {
-        if (next.items.includes(key)) {
-          const items = next.items.filter(item => item !== key)
-          return [...prev, { ...next, items }]
-        }
-
         if (next.name === group) {
           if (next.items.includes(key)) {
             const items = next.items.filter(item => item !== key)
@@ -151,7 +139,7 @@ const KeylightPage = ({}: KeylightPageProps) => {
       ? selectedGroups.find(group => group.items.includes(key))
       : undefined
 
-    console.log(group, selectedGroups)
+
     if (group) {
       return group.color.toString()
     }
